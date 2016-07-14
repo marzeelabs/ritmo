@@ -1,0 +1,19 @@
+@function rhythm($lines: 1, $font-size: $base-font-size, $offset: 0) {
+  $rhythm: convert-length($lines * $base-line-height - $offset, $rhythm-unit, $font-size);
+  @if unit($rhythm) == px {
+    $rhythm: floor($rhythm);
+  }
+  @return $rhythm;
+}
+
+// Calculate the minimum multiple of rhythm units needed to contain the font-size.
+@function lines-for-font-size($font-size) {
+  $lines: if($round-to-nearest-half-line,
+             ceil(2 * $font-size / $base-line-height) / 2,
+             ceil($font-size / $base-line-height));
+  // If lines are cramped include some extra lead.
+  @if ($lines * $base-line-height - $font-size) < ($min-line-padding * 2) {
+    $lines: $lines + if($round-to-nearest-half-line, 0.5, 1);
+  }
+  @return $lines;
+}
