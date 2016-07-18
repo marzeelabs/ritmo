@@ -1,0 +1,22 @@
+{
+  "name": "ritmo",
+  "version": "0.1.0",
+  "description": "A vertical rythm package for node apps.",
+  "keywords": [
+    "sass",
+    "rhythm",
+    "type",
+    "vertical rhythm"
+  ],
+  "homepage": "https://github.com/marzeelabs/ritmo",
+  "bugs": "https://github.com/marzeelabs/ritmo/issues",
+  "author": "João Belchior <joao@marzeelabs.org> (http://marzeelabs.org)",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/marzeelabs/ritmo.git"
+  },
+  "devDependencies": {
+    "node-sass": "^3.0.0"
+  }
+}
