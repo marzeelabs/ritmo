@@ -1,7 +1,7 @@
 {
   "name": "ritmo",
   "version": "0.1.0",
-  "description": "A vertical rythm package for node apps.",
+  "description": "A vertical rhythm package for node apps.",
   "keywords": [
     "sass",
     "rhythm",
