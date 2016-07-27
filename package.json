@@ -17,6 +17,6 @@
     "url" : "https://github.com/marzeelabs/ritmo.git"
   },
   "devDependencies": {
-    "node-sass": "^3.0.0"
+    "node-sass": "^3.7.0"
   }
 }
