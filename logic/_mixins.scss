@@ -23,12 +23,6 @@
 @mixin establish-baseline($font-size: $base-font-size) {
   $relative-size: 100% * ($font-size / $browser-default-font-size);
 
-  @if support-legacy-browser(ie, "6") and (not $relative-font-sizing) {
-    // IE 6 refuses to resize fonts set in pixels and it weirdly resizes fonts
-    // whose root is set in ems. So we set the root font size in percentages of
-    // the default font size, even if we are using absolute sizes elsewhere.
-    * html { font-size: $relative-size; }
-  }
   html {
     font-size: if($relative-font-sizing, $relative-size, $font-size);
 
@@ -180,16 +174,6 @@
 ) {
   @include leading-border($width, $lines, $font-size, $border-style);
   @include trailing-border($width, $lines, $font-size, $border-style);
-}
-
-// Alias for `horizontal-borders` mixin.
-@mixin h-borders(
-  $width: $default-rhythm-border-width,
-  $lines: 1,
-  $font-size: $base-font-size,
-  $border-style: $default-rhythm-border-style
-) {
-  @include horizontal-borders($width, $lines, $font-size, $border-style);
 }
 
 // Apply borders and whitespace equally to all sides.
