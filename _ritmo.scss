@@ -25,7 +25,7 @@ $rem-with-px-fallback: false !default;
 $default-rhythm-border-width: 1px !default;
 $default-rhythm-border-style: solid !default;
 
-// Allows the `adjust-font-size-to` mixin and the `lines-for-font-size` function
+// Allows the `ritmo-font-size` mixin and the `lines-for-font-size` function
 // to round the line height to the nearest half line height instead of the
 // nearest integral line height to avoid large spacing between lines.
 $round-to-nearest-half-line: false !default;

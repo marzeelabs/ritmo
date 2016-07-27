@@ -143,7 +143,7 @@
 }
 
 // Calculate rhythm units.
-@function rhythm($lines: 1, $font-size: $base-font-size, $offset: 0) {
+@function ritmo($lines: 1, $font-size: $base-font-size, $offset: 0) {
   $rhythm: convert-length($lines * $base-line-unit - $offset, $rhythm-unit, $font-size);
   @if unit($rhythm) == px {
     $rhythm: floor($rhythm);
