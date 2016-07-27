@@ -30,10 +30,10 @@
     // To work around this and simplify output, we can set initial line-height
     // in ems for all relative rhythm units, even when $rhythm-unit is `rem`.
     @if $relative-font-sizing {
-      line-height: convert-length($base-line-height * $base-line-multi, em);
+      line-height: convert-length($base-line-unit * $base-line-multi, em);
     }
     @else {
-      line-height: round($base-line-height * $base-line-multi);
+      line-height: round($base-line-unit * $base-line-multi);
     }
   }
 }

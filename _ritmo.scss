@@ -5,9 +5,10 @@ $browser-default-font-size: 16px;
 $base-font-size: 16px !default;
 
 // The unit of vertical rhythm.
-$base-line-height: 5px !default;
+$base-line-unit: 5px !default;
 
 // The multiplication factor used to define the distance between text baselines
+// $base-line-unit * $base-line-multi = base-line-height (5 * 5 = 25px by default)
 $base-line-multi: 5 !default;
 
 // The length unit in which to output rhythm values.
@@ -46,7 +47,7 @@ $relative-font-sizing: if($rhythm-unit == px, false, true);
 
 // The leader is the amount of whitespace in a line.
 // It might be useful in your calculations.
-$base-leader: convert-length(($base-line-height * $base-line-multi) - $base-font-size, $rhythm-unit, $base-font-size);
+$base-leader: convert-length(($base-line-unit * $base-line-multi) - $base-font-size, $rhythm-unit, $base-font-size);
 
 // The half-leader is the amount of whitespace above and below a line.
 // It might be useful in your calculations.
