@@ -8,6 +8,7 @@ $base-font-size: 16px !default;
 $base-line-height: 5px !default;
 
 // The multiplication factor used to define the distance between text baselines
+// $base-line-unit * $base-line-multi = base-line-height (5 * 5 = 25px by default)
 $base-line-multi: 5 !default;
 
 // The length unit in which to output rhythm values.
