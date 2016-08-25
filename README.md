@@ -4,4 +4,4 @@
 
 The only dependency is SASS. We also provide an <a href="https://www.npmjs.com/package/ritmo">npm</a> package.
 
-Find the documentation at [ritmo.github.io](http://ritmo.github.io)
+Find all the documentation at [ritmo.github.io](http://ritmo.github.io)
