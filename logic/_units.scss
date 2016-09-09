@@ -1,8 +1,8 @@
 // Validate units
 @if unit($base-font-size)   != 'px' { @warn "$base-font-size must resolve to a pixel unit."; }
 @if unit($base-line-unit) != 'px' { @warn "$base-line-unit must resolve to a pixel unit."; }
-@if $rhythm-unit != 'px' and $rhythm-unit != 'em' and $rhythm-unit != 'rem' {
-  @warn "$rhythm-unit must be `px`, `em` or `rem`.";
+@if $ritmo-unit != 'px' and $ritmo-unit != 'em' and $ritmo-unit != 'rem' {
+  @warn "$ritmo-unit must be `px`, `em` or `rem`.";
 }
 
 // Output a given style rule containing rem values along with an (optional)
