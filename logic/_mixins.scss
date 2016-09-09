@@ -1,7 +1,7 @@
 // @private Outputs rhythm values. For rem units, outputs pixel fallbacks
 // by default.
 @mixin output-ritmo($property, $values) {
-  @if $rhythm-unit == rem and $rem-with-px-fallback {
+  @if $ritmo-unit == rem and $rem-with-px-fallback {
     @include rem($property, $values);
   }
   @else {
@@ -28,7 +28,7 @@
 
     // Webkit has a bug that prevents line-height being set in rem on <html>;
     // To work around this and simplify output, we can set initial line-height
-    // in ems for all relative rhythm units, even when $rhythm-unit is `rem`.
+    // in ems for all relative rhythm units, even when $ritmo-unit is `rem`.
     @if $relative-font-sizing {
       line-height: convert-length($base-line-unit * $base-line-multi, em);
     }
@@ -48,7 +48,7 @@
   @if $lines == auto {
     $lines: lines-for-font-size($to-size);
   }
-  @include output-ritmo(font-size, convert-length($to-size, $rhythm-unit, $from-size));
+  @include output-ritmo(font-size, convert-length($to-size, $ritmo-unit, $from-size));
   @include ritmo-leading($lines, $to-size);
 }
 
@@ -128,18 +128,13 @@
 // rhythm. The whitespace must be greater than the width of the border.
 @mixin ritmo-side-border(
   $side,
-  $width: $default-rhythm-border-width,
+  $width: $ritmo-border-width,
   $lines: 1,
-  $font-size: $base-font-size,
-  $border-style: $default-rhythm-border-style
+  $font-size: $base-font-size
 ) {
   // If applying borders to all sides, use shorthand properties
   $border-prop: if($side == all, border, border-#{$side});
-  @include output-ritmo(#{$border-prop}-width, convert-length($width, $rhythm-unit, $font-size));
-  #{$border-prop}-style: nth($border-style, 1);
-  @if type-of($border-style) == list and length($border-style) > 1 {
-    #{$border-prop}-color: nth($border-style, 2);
-  }
+  @include output-ritmo(#{$border-prop}-width, convert-length($width, $ritmo-unit, $font-size));
   $padding-prop: if($side == all, padding, padding-#{$side});
   @include output-ritmo(#{$padding-prop}, ritmo($lines, $font-size, $offset: $width));
 }
@@ -147,41 +142,37 @@
 // Apply a leading border.
 // $border-style and $width are deprecated and will be removed in a future version of Compass.
 @mixin ritmo-top-border(
-  $width: $default-rhythm-border-width,
+  $width: $ritmo-border-width,
   $lines: 1,
-  $font-size: $base-font-size,
-  $border-style: $default-rhythm-border-style
+  $font-size: $base-font-size
 ) {
-  @include ritmo-side-border(top, $width, $lines, $font-size, $border-style);
+  @include ritmo-side-border(top, $width, $lines, $font-size);
 }
 
 // Apply a trailing border.
 @mixin ritmo-bottom-border(
-  $width: $default-rhythm-border-width,
+  $width: $ritmo-border-width,
   $lines: 1,
-  $font-size: $base-font-size,
-  $border-style: $default-rhythm-border-style
+  $font-size: $base-font-size
 ) {
-  @include ritmo-side-border(bottom, $width, $lines, $font-size, $border-style);
+  @include ritmo-side-border(bottom, $width, $lines, $font-size);
 }
 
 // Apply both leading and trailing borders.
 @mixin ritmo-horizontal-borders(
-  $width: $default-rhythm-border-width,
+  $width: $ritmo-border-width,
   $lines: 1,
-  $font-size: $base-font-size,
-  $border-style: $default-rhythm-border-style
+  $font-size: $base-font-size
 ) {
-  @include ritmo-top-border($width, $lines, $font-size, $border-style);
-  @include ritmo-bottom-border($width, $lines, $font-size, $border-style);
+  @include ritmo-top-border($width, $lines, $font-size);
+  @include ritmo-bottom-border($width, $lines, $font-size);
 }
 
 // Apply borders and whitespace equally to all sides.
 @mixin ritmo-borders(
-  $width: $default-rhythm-border-width,
+  $width: $ritmo-border-width,
   $lines: 1,
-  $font-size: $base-font-size,
-  $border-style: $default-rhythm-border-style
+  $font-size: $base-font-size
 ) {
-  @include ritmo-side-border(all, $width, $lines, $font-size, $border-style);
+  @include ritmo-side-border(all, $width, $lines, $font-size);
 }

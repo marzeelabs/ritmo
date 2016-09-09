@@ -15,15 +15,13 @@ $base-line-multi: 5 !default;
 // Supported values: px, em, rem. Percent units can't be used since they
 // make calculating padding and margins impractical, and percentage borders are
 // not valid or supported in css.
-$rhythm-unit: 'rem' !default;
+$ritmo-unit: 'rem' !default;
 
-// Whether to output fallback values in px when using rem as the rhythm-unit.
+// Whether to output fallback values in px when using rem as the $ritmo-unit.
 $rem-with-px-fallback: false !default;
 
 // Default values for rhythm borders properties.
-// Supports style alone eg. `solid` or list of style and color eg. `solid #aaa`;
-$default-rhythm-border-width: 1px !default;
-$default-rhythm-border-style: solid !default;
+$ritmo-border-width: 1px !default;
 
 // Allows the `ritmo-font-size` mixin and the `lines-for-font-size` function
 // to round the line height to the nearest half line height instead of the
@@ -35,7 +33,7 @@ $round-to-nearest-half-line: false !default;
 $min-line-padding: 2px !default;
 
 // @private Whether the rhythm output is in absolute units (px) or not (em, rem)
-$relative-font-sizing: if($rhythm-unit == px, false, true);
+$relative-font-sizing: if($ritmo-unit == px, false, true);
 
 // Import the partials
 @import "logic/functions",
@@ -43,11 +41,11 @@ $relative-font-sizing: if($rhythm-unit == px, false, true);
         "logic/mixins";
 
 
-// Helper variables
+// Constant variables
 
 // The leader is the amount of whitespace in a line.
 // It might be useful in your calculations.
-$base-leader: convert-length(($base-line-unit * $base-line-multi) - $base-font-size, $rhythm-unit, $base-font-size);
+$base-leader: convert-length(($base-line-unit * $base-line-multi) - $base-font-size, $ritmo-unit, $base-font-size);
 
 // The half-leader is the amount of whitespace above and below a line.
 // It might be useful in your calculations.
