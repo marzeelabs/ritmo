@@ -144,11 +144,11 @@
 
 // Calculate rhythm units.
 @function ritmo($lines: 1, $font-size: $base-font-size, $offset: 0) {
-  $rhythm: convert-length($lines * $base-line-unit - $offset, $rhythm-unit, $font-size);
-  @if unit($rhythm) == px {
-    $rhythm: floor($rhythm);
+  $ritmo: convert-length($lines * $base-line-unit - $offset, $ritmo-unit, $font-size);
+  @if unit($ritmo) == px {
+    $ritmo: floor($ritmo);
   }
-  @return $rhythm;
+  @return $ritmo;
 }
 
 // Calculate the minimum multiple of rhythm units needed to contain the font-size.
