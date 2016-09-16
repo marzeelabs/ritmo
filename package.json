@@ -19,5 +19,5 @@
   "devDependencies": {
     "node-sass": "^3.7.0"
   },
-  "main": "_ritmo.scss",
+  "main": "_ritmo.scss"
 }
