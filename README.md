@@ -5,3 +5,11 @@
 The only dependency is SASS. We also provide an <a href="https://www.npmjs.com/package/ritmo">npm</a> package.
 
 Find all the documentation at [ritmo.marzeelabs.org](http://ritmo.marzeelabs.org).
+
+===
+
+##### Compass Aliases
+
+If you would like to use the original [Compass naming conventions](http://compass-style.org/reference/compass/typography/vertical_rhythm/) with RITMO, simply add the following line to your main stylesheet after importing RITMO.
+
+`@import '~ritmo/compass-aliases';`
