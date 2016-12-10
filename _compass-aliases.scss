@@ -22,7 +22,7 @@ $ritmo-border-width: $default-rhythm-border-width !default;
 @mixin margin-trailer($args...) { @include ritmo-bottom-margin($args...); }
 @mixin rhythm($args...) { @include ritmo($args...); }
 @mixin rhythm-margins($args...) { @include ritmo-margins($args...); }
-@mixin rhythm-padding($args...) { @include ritmo-padding($args...); }
+@mixin rhythm-padding($args...) { @include ritmo-paddings($args...); }
 @mixin apply-side-rhythm-border($args...) { @include ritmo-side-border($args...); }
 @mixin leading-border($args...) { @include ritmo-top-border($args...); }
 @mixin trailing-border($args...) { @include ritmo-bottom-border($args...); }
